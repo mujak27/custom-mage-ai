@@ -67,4 +67,7 @@ WORKDIR /home/src
 EXPOSE 6789
 EXPOSE 7789
 
+## Replace polars with polars-lts-cpu
+RUN pip3 uninstall --yes polars && pip3 install polars-lts-cpu==0.19.1
+
 CMD ["/bin/sh", "-c", "/app/run_app.sh"]
